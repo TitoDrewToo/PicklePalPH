@@ -71,6 +71,11 @@ display:inline-block;
 font-weight:600;
 }
 
+.store-link img{
+height:48px;
+width:auto;
+}
+
 .phone-preview{
 margin-top:80px;
 display:flex;
