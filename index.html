@@ -1,174 +1,143 @@
 <!DOCTYPE html>
-<html>
-<head> <link rel="icon" type="image/png" href="/assets/PBPP.png">
+<html lang="en">
+
+<head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="logo">
-<img src="/assets/PPL.png" alt="PicklePal" height="40">
-</div>
+<title>PicklePal</title>
 
-<style>
+<link rel="stylesheet" href="/styles.css">
 
-body{
-font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
-margin:0;
-color:#111;
-line-height:1.6;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
-}
-
-.hero{
-background:#f5f7fa;
-padding:120px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:600px;
-margin:auto;
-font-size:18px;
-color:#555;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-background:#0ea5e9;
-color:white;
-padding:14px 28px;
-border-radius:8px;
-text-decoration:none;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.feature{
-border:1px solid #eee;
-padding:25px;
-border-radius:10px;
-}
-
-.footer{
-text-align:center;
-padding:40px;
-background:#111;
-color:white;
-}
-
-.footer a{
-color:white;
-}
-
-</style>
+<link rel="icon" type="image/png" href="/assets/PBPP.png">
 
 </head>
 
 <body>
 
+<header class="header">
+
+<div class="nav container">
+
+<img src="/assets/PPL.png" class="logo">
+
+<nav>
+
+<a href="#features">Features</a>
+<a href="#screens">Screens</a>
+
+<a href="/partner" class="hidden">Be a Partner</a>
+<a href="/login" class="hidden">Login</a>
+
+<a href="/privacy">Privacy</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
 <section class="hero">
-<div class="hero-bg"></div>
-<h1>PicklePal</h1>
+
+<img src="/assets/ICONPPIOS.png" class="hero-icon">
+
+<h1>Find courts. Book instantly. Play more.</h1>
 
 <p>
-Find courts. Book instantly. Play more.
-</p>
-
-<p>
-The easiest way to discover pickleball courts, book sessions,
+Discover pickleball courts, book sessions,
 and connect with players across the Philippines.
 </p>
 
-<a class="btn" href="#">
-Download the App
-</a>
+<a class="btn-primary">Download the App</a>
+
+
+<div class="phone-preview">
+
+<img src="/assets/screens/screen3.png" class="phone left">
+
+<img src="/assets/screens/screen5.png" class="phone center">
+
+<img src="/assets/screens/screen7.png" class="phone right">
+
+</div>
 
 </section>
 
-<div class="container">
 
-<h2>About PicklePal</h2>
 
-<p>
-PicklePal is a pickleball marketplace connecting players with courts
-and venues through a seamless booking platform.
-</p>
+<section id="features" class="features container">
 
-<h2>Key Features</h2>
+<h2>Why PicklePal</h2>
 
-<div class="features">
+<div class="feature-grid">
 
 <div class="feature">
-<h3>Real-Time Court Booking</h3>
+<h3>Real-Time Booking</h3>
 <p>Check live court availability and reserve instantly.</p>
 </div>
 
 <div class="feature">
-<h3>Discover Courts Near You</h3>
-<p>Explore pickleball venues and local communities.</p>
+<h3>Discover Courts</h3>
+<p>Find pickleball venues near you.</p>
 </div>
 
 <div class="feature">
-<h3>Open Play & Reservations</h3>
-<p>Join open play sessions or reserve courts.</p>
+<h3>Open Play</h3>
+<p>Join open play sessions hosted by venues.</p>
 </div>
 
 <div class="feature">
 <h3>Secure Payments</h3>
-<p>Integrated booking payments with confirmation.</p>
+<p>Fast and secure integrated payments.</p>
 </div>
 
 <div class="feature">
-<h3>Venue Partner Platform</h3>
-<p>Tools for venues to manage bookings and operations.</p>
+<h3>Venue Tools</h3>
+<p>Booking management for partner venues.</p>
 </div>
 
 <div class="feature">
-<h3>Analytics & Reporting</h3>
-<p>Track revenue, utilization and booking trends.</p>
+<h3>Analytics</h3>
+<p>Insights into booking trends and performance.</p>
 </div>
 
 </div>
 
-<h2>Support</h2>
+</section>
 
-<p>
-Need help or have questions?
-</p>
 
-<p>
-support@picklepalph.com
-</p>
+
+<section id="screens" class="screens">
+
+<h2>PicklePal in Action</h2>
+
+<div class="screen-grid">
+
+<img src="/assets/screens/screen1.png">
+<img src="/assets/screens/screen2.png">
+<img src="/assets/screens/screen3.png">
+<img src="/assets/screens/screen4.png">
+<img src="/assets/screens/screen5.png">
+<img src="/assets/screens/screen6.png">
 
 </div>
 
-<div class="footer">
+</section>
 
-<p>
-© 2026 PicklePal
-</p>
 
-<p>
+
+<footer class="footer">
+
+<img src="/assets/appicon-light.png" class="footer-icon">
+
+<p>© 2026 PicklePal</p>
+
 <a href="/privacy">Privacy Policy</a>
-</p>
 
-</div>
+</footer>
 
 </body>
 </html>
