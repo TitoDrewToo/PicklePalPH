@@ -80,7 +80,7 @@ flex-wrap:wrap;
 }
 
 .store-link img{
-height:64px;   /* ✅ FIXED SIZE */
+height:264px;   /* ✅ FIXED SIZE */
 width:auto;
 display:block;
 }
