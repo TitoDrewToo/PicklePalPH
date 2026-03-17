@@ -157,32 +157,14 @@ box-shadow:0 5px 15px rgba(0,0,0,0.05);
 /* SUPPORT */
 
 .support-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+display:flex;
+justify-content:center;
 margin-top:30px;
 }
 
-@media (max-width:800px){
-.support-grid{
-grid-template-columns:1fr;
-}
-}
-
 .support-card{
-background:white;
-padding:25px;
-border-radius:12px;
-border:1px solid #eee;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-
-.support-card a{
-display:block;
-margin-top:10px;
-color:#007AFF;
-text-decoration:none;
-font-weight:500;
+max-width:420px;
+width:100%;
 }
 
 
