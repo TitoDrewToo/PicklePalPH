@@ -90,18 +90,20 @@ display:block;
 /* HERO IMAGE — SAFE VERSION */
 
 .hero-image{
-margin-top:50px;
-display:flex;
-justify-content:center;
+margin-top:60px;
+width:100vw;              /* full viewport width */
+margin-left:calc(-50vw + 50%);   /* 🔥 breakout from container */
 }
 
 .hero-image img{
 width:100%;
-max-width:900px;   /* prevents blur/stretch */
-border-radius:20px;
-box-shadow:0 25px 50px rgba(0,0,0,0.15);
+height:520px;
+object-fit:cover;
+object-position:center;
+display:block;
+border-radius:0;          /* remove rounding */
+box-shadow:none;
 }
-
 
 
 /* SUPPORT PAGE FIX */
