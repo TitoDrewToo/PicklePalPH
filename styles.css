@@ -182,3 +182,21 @@ color:white;
 height:40px;
 margin-bottom:10px;
 }
+
+.apply-button{
+display:inline-block;
+margin-top:20px;
+padding:14px 28px;
+background:#007AFF;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+font-size:16px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+transition:0.2s;
+}
+
+.apply-button:hover{
+background:#005FCC;
+}
