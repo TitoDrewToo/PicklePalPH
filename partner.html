@@ -125,10 +125,6 @@ Confirm your email to proceed with enrollment.
 
 <!-- JS -->
 <script>
-(function(){
-  emailjs.init("YOUR_PUBLIC_KEY");
-})();
-
 function sendVerification() {
   const email = document.getElementById("partnerEmail").value;
 
@@ -140,13 +136,20 @@ function sendVerification() {
 
   document.getElementById("emailStatus").innerText = "Sending...";
 
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-    to_email: email
-  })
-  .then(function() {
+  emailjs.send(
+    "service_co6l94v",
+    "template_hyvelnk",
+    {
+      to_email: email
+    },
+    "YOUR_PUBLIC_KEY"
+  )
+  .then(function(response) {
     document.getElementById("emailStatus").innerText =
       "Check your email for the enrollment form.";
-  }, function(error) {
+  })
+  .catch(function(error) {
+    console.error("EmailJS Error:", error);
     document.getElementById("emailStatus").innerText =
       "Error sending email.";
   });
