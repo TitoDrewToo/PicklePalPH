@@ -157,22 +157,25 @@ box-shadow:0 5px 15px rgba(0,0,0,0.05);
 /* SUPPORT */
 
 .support{
-display:flex;
-flex-direction:column;
-align-items:center;
-margin-top:60px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  margin-top:60px;
 }
 
 .support-grid{
-display:flex;
-justify-content:center;
-width:100%;
+  display:flex;
+  justify-content:center;
+  width:100%;
 }
 
 .support-card{
-max-width:420px;
-width:100%;
-text-align:left;
+  max-width:420px;
+  width:100%;
+  margin:0 auto;          /* 🔥 hard center */
+  text-align:left;
 }
 
 
