@@ -8,6 +8,7 @@
 
 <link rel="stylesheet" href="/styles.css">
 <link rel="icon" type="image/png" href="/assets/PBPP.png">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>  
 </head>
 
 <body>
@@ -124,6 +125,10 @@ Confirm your email to proceed with enrollment.
 
 <!-- JS -->
 <script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY");
+})();
+
 function sendVerification() {
   const email = document.getElementById("partnerEmail").value;
 
@@ -135,10 +140,16 @@ function sendVerification() {
 
   document.getElementById("emailStatus").innerText = "Sending...";
 
-  // TEMP: Manual workflow trigger (no API yet)
-
-  document.getElementById("emailStatus").innerText =
-    "Check your email for the enrollment form.";
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    to_email: email
+  })
+  .then(function() {
+    document.getElementById("emailStatus").innerText =
+      "Check your email for the enrollment form.";
+  }, function(error) {
+    document.getElementById("emailStatus").innerText =
+      "Error sending email.";
+  });
 }
 </script>
 
