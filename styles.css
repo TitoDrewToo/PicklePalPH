@@ -156,15 +156,23 @@ box-shadow:0 5px 15px rgba(0,0,0,0.05);
 
 /* SUPPORT */
 
+.support{
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-top:60px;
+}
+
 .support-grid{
 display:flex;
 justify-content:center;
-margin-top:30px;
+width:100%;
 }
 
 .support-card{
 max-width:420px;
 width:100%;
+text-align:left;
 }
 
 
