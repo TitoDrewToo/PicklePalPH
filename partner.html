@@ -126,34 +126,19 @@ Confirm your email to proceed with enrollment.
 <script>
 function sendVerification() {
   const email = document.getElementById("partnerEmail").value;
-  const ppid = document.getElementById("partnerPPID").value;
 
-  if (!email || !ppid) {
+  if (!email) {
     document.getElementById("emailStatus").innerText =
-      "Please enter both email and PPID.";
+      "Please enter your email.";
     return;
   }
 
-  document.getElementById("emailStatus").innerText = "Sending verification...";
+  document.getElementById("emailStatus").innerText = "Sending...";
 
-  fetch("PASTE_YOUR_GUMLOOP_WEBHOOK_URL_HERE", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      email: email,
-      ppid: ppid
-    })
-  })
-  .then(() => {
-    document.getElementById("emailStatus").innerText =
-      "Verification link sent.";
-  })
-  .catch(() => {
-    document.getElementById("emailStatus").innerText =
-      "Error sending verification.";
-  });
+  // TEMP: Manual workflow trigger (no API yet)
+
+  document.getElementById("emailStatus").innerText =
+    "Check your email for the enrollment form.";
 }
 </script>
 
