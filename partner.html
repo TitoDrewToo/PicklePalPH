@@ -128,11 +128,11 @@ Confirm your email and PPID to proceed with enrollment.
 
 <!-- JS -->
 <script>
-async function sendVerification(){
+function sendVerification() {
   const email = document.getElementById("partnerEmail").value;
   const ppid = document.getElementById("partnerPPID").value;
 
-  if(!email || !ppid){
+  if (!email || !ppid) {
     document.getElementById("emailStatus").innerText =
       "Please enter both email and PPID.";
     return;
@@ -140,7 +140,7 @@ async function sendVerification(){
 
   document.getElementById("emailStatus").innerText = "Sending verification...";
 
-  await fetch("https://api.gumloop.com/YOUR-WEBHOOK", {
+  fetch("PASTE_YOUR_GUMLOOP_WEBHOOK_URL_HERE", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -149,10 +149,15 @@ async function sendVerification(){
       email: email,
       ppid: ppid
     })
+  })
+  .then(() => {
+    document.getElementById("emailStatus").innerText =
+      "Verification link sent.";
+  })
+  .catch(() => {
+    document.getElementById("emailStatus").innerText =
+      "Error sending verification.";
   });
-
-  document.getElementById("emailStatus").innerText =
-    "Verification link sent to " + email;
 }
 </script>
 
