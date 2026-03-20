@@ -8,6 +8,7 @@
 
 <link rel="stylesheet" href="/styles.css">
 <link rel="icon" type="image/png" href="/assets/PBPP.png">
+
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>  
 </head>
 
@@ -23,7 +24,6 @@
 
     <nav>
       <a href="/">Home</a>
-     
       <a href="/support">Support</a>
       <a href="/privacy">Privacy</a>
       <a href="/partner">Partner</a>
@@ -50,30 +50,41 @@
 
     <div class="support-card">
 
+      <!-- STEP 1 -->
       <h3>Step 1 — Get Your PPID</h3>
       <p>
         Download the app, sign up, and log in.  
         Your PPID is shown above your display name.
       </p>
 
+      <br>
+
+      <!-- STEP 2 -->
+      <h3>Step 2 — Prepare Requirements</h3>
+      <p>
+        Prepare your documents before applying.  
+        <a href="#" onclick="openRequirements()">View requirements</a>
+      </p>
+
+      <br>
+
+      <!-- STEP 3 -->
       <h3>Step 3 — Email Confirmation</h3>
-<p>
-Confirm your email to proceed with enrollment.
-</p>
+      <p>
+        Confirm your email to proceed with enrollment.
+      </p>
 
-<br>
+      <br>
 
-<input type="email" id="partnerEmail" placeholder="Enter your email" class="email-input">
+      <input type="email" id="partnerEmail" placeholder="Enter your email" class="email-input">
 
-<br><br>
+      <br><br>
 
-<button onclick="sendVerification()" class="cta-button">
-  Send Form Link
-</button>
+      <button onclick="sendVerification()" class="cta-button">
+        Send Form Link
+      </button>
 
-<p id="emailStatus" style="margin-top:10px;"></p>
-
-    
+      <p id="emailStatus" style="margin-top:10px;"></p>
 
     </div>
 
@@ -97,7 +108,7 @@ Confirm your email to proceed with enrollment.
     <h4>Proof of Role</h4>
     <ul>
       <li>Owner: Business permit or ownership document</li>
-      <li>Manager: Employee ID/Proof of association</li>
+      <li>Manager: Employee ID / Proof of association</li>
       <li>School / Community: ID + affiliation proof</li>
     </ul>
 
@@ -125,6 +136,17 @@ Confirm your email to proceed with enrollment.
 
 <!-- JS -->
 <script>
+
+/* MODAL */
+function openRequirements() {
+  document.getElementById("requirementsModal").style.display = "block";
+}
+
+function closeRequirements() {
+  document.getElementById("requirementsModal").style.display = "none";
+}
+
+/* EMAIL */
 function sendVerification() {
   const email = document.getElementById("partnerEmail").value;
 
@@ -154,6 +176,7 @@ function sendVerification() {
       "Error sending email.";
   });
 }
+
 </script>
 
 </body>
