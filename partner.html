@@ -1,202 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Become a Partner - PicklePal</title>
+<link rel="stylesheet" href="styles.css">
 
-<link rel="stylesheet" href="/styles.css">
-<link rel="icon" type="image/png" href="/assets/PBPP.png">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>  
 </head>
 
 <body>
 
-<!-- HEADER -->
+
+
 <header class="header">
 
 <div class="nav container">
 
-<a href="/">
-<img src="/assets/PPL.png" class="logo">
+<a href="index.html">
+
+<img src="assets/PPL.png" class="logo">
+
 </a>
 
-<nav class="nav-links">
 
-<a href="/support">Support</a>
-<a href="/privacy">Privacy</a>
-<a href="/partner">Partner</a>
+
+<nav>
+
+<a href="support.html">Support</a>
+
+<a href="privacy.html">Privacy</a>
+
+<a href="partner.html">Partner</a>
 
 </nav>
+
+
 
 </div>
 
 </header>
-<!-- HERO -->
-<section class="support">
-  <img src="/assets/PPIcon.png" class="hero-icon">
 
-  <h1>We bring you to your customers and your customers to you</h1>
 
-  <p>
-    Be a PicklePal Partner
-  </p>
-</section>
 
-<!-- STEPS -->
 <section class="support">
 
-  <div class="support-grid">
+<h1>Be a PicklePal Partner</h1>
 
-    <div class="support-card">
 
-      <!-- STEP 1 -->
-      <h3>Step 1 — Get Your PPID</h3>
-      <p>
-        Download the app, sign up, and log in.  
-        Your PPID is shown above your display name.
-      </p>
-
-      <br>
-
-      <!-- STEP 2 -->
-      <h3>Step 2 — Prepare Requirements</h3>
-      <p>
-        Prepare your documents before applying.  
-        <a href="#" onclick="openRequirements()">View requirements</a>
-      </p>
-
-      <br>
-
-      <!-- STEP 3 -->
-      <h3>Step 3 — Email Confirmation</h3>
-      <p>
-        Confirm your email to proceed with enrollment.
-      </p>
-
-      <br>
-
-      <input type="email" id="partnerEmail" placeholder="Enter your email" class="email-input">
-
-      <br><br>
-
-      <button onclick="sendVerification()" class="cta-button">
-        Send Form Link
-      </button>
-
-      <p id="emailStatus" style="margin-top:10px;"></p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- MODAL -->
-<div id="requirementsModal" class="modal">
-  <div class="modal-content">
-
-    <span class="close" onclick="closeRequirements()">&times;</span>
-
-    <h3>Requirements</h3>
-
-    <h4>Identity</h4>
-    <ul>
-      <li>Valid government-issued ID</li>
-    </ul>
-
-    <h4>Proof of Role</h4>
-    <ul>
-      <li>Owner: Business permit or ownership document</li>
-      <li>Manager: Employee ID / Proof of association</li>
-      <li>School / Community: ID + affiliation proof</li>
-    </ul>
-
-    <h4>Venue Information</h4>
-    <ul>
-      <li>Venue name</li>
-      <li>Address / city</li>
-      <li>Number of courts</li>
-    </ul>
-
-    <h4>Notes</h4>
-    <ul>
-      <li>All applications are subject to review</li>
-      <li>You may be asked to resubmit missing information</li>
-    </ul>
-
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-
-<div class="footer-inner container">
-
-<img src="/assets/PPL.png" class="footer-logo">
 
 <p>
-© 2026 PicklePal. All rights reserved.
+
+Enter your email to receive the enrollment form.
+
 </p>
 
-<div class="footer-links">
 
-<a href="/support">Support</a>
-<a href="/privacy">Privacy</a>
-<a href="/partner">Partner</a>
 
-</div>
+<input
 
-</div>
+type="email"
+
+id="partnerEmail"
+
+placeholder="Enter your email"
+
+class="email-input"
+
+>
+
+
+
+<br><br>
+
+
+
+<button onclick="sendVerification()" class="cta-button">
+
+Send Form Link
+
+</button>
+
+
+
+<p id="emailStatus"></p>
+
+
+
+</section>
+
+
+
+<footer class="footer">
+
+<img src="assets/PPIcon.png" class="footer-icon">
+
+<p>© 2026 PicklePal</p>
 
 </footer>
 
-<!-- JS -->
+
+
 <script>
 
-/* MODAL */
-function openRequirements() {
-  document.getElementById("requirementsModal").style.display = "block";
-}
+function sendVerification(){
 
-function closeRequirements() {
-  document.getElementById("requirementsModal").style.display = "none";
-}
+const email=document.getElementById("partnerEmail").value;
 
-/* EMAIL */
-function sendVerification() {
-  const email = document.getElementById("partnerEmail").value;
 
-  if (!email) {
-    document.getElementById("emailStatus").innerText =
-      "Please enter your email.";
-    return;
-  }
 
-  document.getElementById("emailStatus").innerText = "Sending...";
+emailjs.send(
 
-  emailjs.send(
-    "service_co6l94v",
-    "template_hyvelnk",
-    {
-      to_email: email
-    },
-    "nWidGrg1KaFfGDPZo"
-  )
-  .then(function(response) {
-    document.getElementById("emailStatus").innerText =
-      "Check your email for the enrollment form.";
-  })
-  .catch(function(error) {
-    console.error("EmailJS Error:", error);
-    document.getElementById("emailStatus").innerText =
-      "Error sending email.";
-  });
+"service_co6l94v",
+
+"template_hyvelnk",
+
+{
+
+to_email:email
+
+},
+
+"nWidGrg1KaFfGDPZo"
+
+)
+
+
+
+.then(function(){
+
+document.getElementById("emailStatus").innerText="Check your email.";
+
+});
+
 }
 
 </script>
 
+
+
 </body>
+
 </html>
