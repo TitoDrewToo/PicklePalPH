@@ -1,62 +1,56 @@
+/* BASE */
+
 body{
-font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 margin:0;
-background:white;
 color:#111;
-line-height:1.6;
+background:white;
 }
-
-
 
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
-padding:30px 20px;
+padding:0 20px;
 }
 
 
-
-/* NAV */
+/* NAVBAR */
 
 .header{
 position:sticky;
 top:0;
-z-index:100;
 background:white;
 border-bottom:1px solid rgba(0,0,0,0.05);
+z-index:10;
 }
 
 .nav{
 display:flex;
-align-items:center;
 justify-content:space-between;
-height:64px;
+align-items:center;
+height:70px;
 }
 
 .logo{
-height:32px;
+height:30px;
 }
-
-
 
 .nav-links{
 display:flex;
-align-items:center;
 gap:28px;
 }
 
 .nav-links a{
 font-size:13px;
-letter-spacing:0.12em;
+letter-spacing:.12em;
 text-transform:uppercase;
 text-decoration:none;
 color:#111;
 font-weight:500;
-transition:0.2s;
 }
 
 .nav-links a:hover{
-opacity:0.6;
+opacity:.6;
 }
 
 
@@ -64,70 +58,107 @@ opacity:0.6;
 /* HERO */
 
 .hero{
-text-align:center;
-padding:90px 20px 60px;
-background:white;
+position:relative;
+padding:100px 0 80px;
+overflow:hidden;
+}
+
+.hero-bg{
+position:absolute;
+right:-200px;
+top:-200px;
+width:700px;
+height:700px;
+background:radial-gradient(circle at center,
+rgba(0,122,255,0.15),
+transparent 70%);
+filter:blur(120px);
+}
+
+.hero-grid{
+position:absolute;
+inset:0;
+
+background-image:
+linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+
+background-size:60px 60px;
+}
+
+.hero-inner{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:40px;
 }
 
 .hero-icon{
-height:88px;
-width:auto;
-margin-bottom:24px;
-opacity:0.95;
+height:80px;
+margin-bottom:20px;
+filter:drop-shadow(0 10px 25px rgba(242,201,76,.35));
 }
+
+
+/* HEADLINE */
 
 .hero h1{
-font-size:48px;
-margin-bottom:14px;
+font-size:72px;
+font-weight:800;
 letter-spacing:-0.02em;
+line-height:.95;
+margin-bottom:18px;
 }
+
+.hero h1 span{
+display:block;
+-webkit-text-stroke:1.4px #111;
+paint-order:stroke fill;
+}
+
+.gold{
+color:#F2C94C;
+}
+
+.blue{
+color:#5DADE2;
+}
+
+.hero h1 span:nth-child(2){
+color:#111;
+-webkit-text-stroke:0px;
+}
+
 
 .hero p{
-font-size:18px;
-max-width:640px;
-margin:auto;
 color:#555;
+font-size:18px;
+max-width:420px;
 }
 
-
-
-/* STORE BUTTONS */
 
 .store-buttons{
-margin-top:34px;
+margin-top:30px;
 display:flex;
-justify-content:center;
 gap:16px;
-flex-wrap:wrap;
 }
 
-.store-link img{
-height:58px;
-width:auto;
-display:block;
-transition:0.2s;
-}
-
-.store-link img:hover{
-transform:translateY(-2px);
+.store-buttons img{
+height:52px;
 }
 
 
+/* PHONE IMAGE */
 
-/* HERO IMAGE */
-
-.hero-image{
-margin-top:70px;
+.hero-right{
 display:flex;
 justify-content:center;
 }
 
-.hero-image img{
+.phones{
+max-width:460px;
 width:100%;
-max-width:1100px;
-height:auto;
-object-fit:contain;
-display:block;
+filter:drop-shadow(0 40px 60px rgba(0,0,0,0.25));
 }
 
 
@@ -135,109 +166,71 @@ display:block;
 /* FEATURES */
 
 .features{
-padding:90px 20px 80px;
-background:white;
+padding:80px 0;
+background:linear-gradient(to right,#f6f7f9,#0b0f18);
 }
 
 .features h2{
 text-align:center;
+font-size:34px;
 margin-bottom:50px;
-font-size:32px;
-letter-spacing:-0.02em;
+color:white;
 }
-
-
 
 .feature-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:22px;
-margin-top:40px;
+gap:26px;
 }
-
-@media (max-width:900px){
-.feature-grid{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media (max-width:520px){
-.feature-grid{
-grid-template-columns:1fr;
-}
-}
-
-
-
-/* FEATURE CARDS */
 
 .feature{
 background:white;
-padding:26px;
-border-radius:14px;
-border:1px solid #f0f0f0;
-box-shadow:0 8px 22px rgba(0,0,0,0.04);
-transition:0.2s;
-}
-
-.feature:hover{
-transform:translateY(-3px);
-box-shadow:0 14px 30px rgba(0,0,0,0.06);
+padding:30px;
+border-radius:16px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 .feature h3{
 margin-bottom:6px;
-font-size:18px;
 }
 
 .feature p{
-font-size:15px;
-color:#666;
+color:#555;
 }
 
+.icon{
+width:36px;
+height:36px;
+border-radius:10px;
+margin-bottom:14px;
+}
+
+.yellow{background:#FFF4D8;}
+.blue{background:#E6F2FB;}
+.green{background:#E7F6EC;}
 
 
-/* SUPPORT PAGE */
 
-.support{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+/* SUPPORT / PARTNER */
+
+.page-section{
+padding:80px 20px;
+max-width:700px;
+margin:auto;
 text-align:center;
-margin-top:60px;
 }
 
-.support-grid{
-display:flex;
-justify-content:center;
-width:100%;
+.page-section h1{
+margin-bottom:10px;
 }
 
-.support-card{
-max-width:420px;
-width:100%;
-margin:0 auto;
-text-align:left;
+.page-section p{
+color:#555;
 }
 
 
 
-/* CTA BUTTON */
-
-.cta-button{
-display:inline-block;
-padding:14px 24px;
-background:#007AFF;
-color:white;
-text-decoration:none;
-border-radius:8px;
-font-weight:600;
-}
-
-
-
-/* INPUT */
+/* FORM */
 
 .email-input{
 width:100%;
@@ -245,6 +238,18 @@ max-width:320px;
 padding:12px;
 border-radius:8px;
 border:1px solid #ccc;
+margin-top:20px;
+}
+
+.cta-button{
+margin-top:20px;
+padding:14px 24px;
+background:#007AFF;
+color:white;
+border:none;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
 }
 
 
@@ -258,7 +263,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,.6);
 justify-content:center;
 align-items:center;
 z-index:1000;
@@ -283,10 +288,9 @@ cursor:pointer;
 /* FOOTER */
 
 .footer{
+padding:60px 0;
 background:white;
 border-top:1px solid rgba(0,0,0,0.05);
-padding:50px 20px;
-margin-top:80px;
 }
 
 .footer-inner{
@@ -299,10 +303,8 @@ gap:20px;
 
 .footer-logo{
 height:26px;
-opacity:0.7;
+opacity:.7;
 }
-
-
 
 .footer-links{
 display:flex;
@@ -311,11 +313,44 @@ gap:24px;
 
 .footer-links a{
 text-decoration:none;
+color:#333;
 font-size:13px;
-letter-spacing:0.08em;
-color:#222;
+letter-spacing:.08em;
 }
 
-.footer-links a:hover{
-opacity:0.6;
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero-inner{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero p{
+margin:auto;
+}
+
+.store-buttons{
+justify-content:center;
+}
+
+.feature-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:520px){
+
+.feature-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:44px;
+}
+
 }
