@@ -83,7 +83,7 @@ margin:auto;
 
 /* force correct badge size */
 .store-buttons img{
-  height:52px !important;
+  height:264px !important;
   width:auto;
   display:block;
 }
