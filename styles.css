@@ -74,17 +74,23 @@ margin:auto;
 /* STORE BUTTONS */
 
 .store-buttons{
-margin-top:28px;
-display:flex;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap;
+  margin-top:28px;
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
 }
 
-.store-link img{
-height:55px;
-width:auto;
-display:block;
+/* force correct badge size */
+.store-buttons img{
+  height:52px !important;
+  width:auto;
+  display:block;
+}
+
+/* optional hover */
+.store-buttons img:hover{
+  transform:translateY(-2px);
 }
 
 
